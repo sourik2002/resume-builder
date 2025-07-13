@@ -38,6 +38,7 @@ export const uploadResumeImages = async (req, res) => {
                 }
                 resume.profileInfo.profilePreviewUrl = `${baseUrl}/uploads/${newProfileImage.filename}`
             }
+
             await resume.save();
             res.status(200).json({
                 message: "Image uploaded successfully",

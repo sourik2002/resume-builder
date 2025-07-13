@@ -14,7 +14,7 @@ export const StepProgress = ({ progress }) => {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-shimmer" />
 
-            <div className="absolute inset-0 opacity-80">
+            {/* <div className="absolute inset-0 opacity-80">
               {[...Array(8)].map((_, i) => (
                 <div
                   key={i}
@@ -26,10 +26,10 @@ export const StepProgress = ({ progress }) => {
                   }}
                 ></div>
               ))}
-            </div>
+            </div> */}
 
-            {/**particle effect */}
-            <div className="absolute inset-0 opacity-80">
+            {/*particle effect*/}
+            {/* <div className="absolute inset-0 opacity-80">
               {[...Array(12)].map((_, i) => (
                 <div
                   key={i}
@@ -41,7 +41,7 @@ export const StepProgress = ({ progress }) => {
                   }}
                 ></div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {progress > 0 && (
