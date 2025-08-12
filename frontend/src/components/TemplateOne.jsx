@@ -29,7 +29,7 @@ const TemplateOne = ({ resumeData = {}, containerWidth }) => {
     contactInfo = {},
     education = [],
     languages = [],
-    workExperience = [],
+    //workExperience = [],
     projects = [],
     skills = [],
     certifications = [],
@@ -147,7 +147,7 @@ const TemplateOne = ({ resumeData = {}, containerWidth }) => {
       <div className="grid grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="col-span-2 space-y-4">
-          {workExperience.length > 0 && (
+          {/* {workExperience.length > 0 && (
             <div className="resume-section">
               <Title text="Work Experience" />
               <div className="space-y-6">
@@ -165,7 +165,7 @@ const TemplateOne = ({ resumeData = {}, containerWidth }) => {
                 ))}
               </div>
             </div>
-          )}
+          )} */}
 
           {projects.length > 0 && (
             <div className="resume-section">

@@ -26,7 +26,7 @@ import html2canvas from "html2canvas";
 import { StepProgress } from "./StepProgress";
 import { RenderResume } from "./RenderResume";
 import Modal from "./Modal";
-import { ThemeSelector } from "./ThemeSelector";
+import { ThemeSelector } from "../components/ThemeSelector";
 import { dataURLtoFile } from "../utils/helper";
 import {
   ProfileInfoForm,
@@ -224,9 +224,9 @@ const EditResume = () => {
 
     switch (currentPage) {
       case "profile-info": {
-        const { fullName, designation, summary } = resumeData.profileInfo;
+        const { fullName, summary } = resumeData.profileInfo;
         if (!fullName.trim()) errors.push("Full Name is required");
-        if (!designation.trim()) errors.push("Designation is required");
+        //if (!designation.trim()) errors.push("Designation is required");
         if (!summary.trim()) errors.push("Summary is required");
         break;
       }
@@ -240,21 +240,21 @@ const EditResume = () => {
         break;
       }
 
-      case "work-experience": {
-        resumeData.workExperience.forEach(
-          ({ company, role, startDate, endDate }, index) => {
-            if (!company || !company.trim())
-              errors.push(`Company is required in experience ${index + 1}`);
-            if (!role || !role.trim())
-              errors.push(`Role is required in experience ${index + 1}`);
-            if (!startDate || !endDate)
-              errors.push(
-                `Start and End dates are required in experience ${index + 1}`
-              );
-          }
-        );
-        break;
-      }
+      // case "work-experience": {
+      //   resumeData.workExperience.forEach(
+      //     ({ company, role, startDate, endDate }, index) => {
+      //       if (!company || !company.trim())
+      //         errors.push(`Company is required in experience ${index + 1}`);
+      //       if (!role || !role.trim())
+      //         errors.push(`Role is required in experience ${index + 1}`);
+      //       if (!startDate || !endDate)
+      //         errors.push(
+      //           `Start and End dates are required in experience ${index + 1}`
+      //         );
+      //     }
+      //   );
+      //   break;
+      // }
 
       case "education-info": {
         resumeData.education.forEach(
@@ -273,13 +273,13 @@ const EditResume = () => {
       }
 
       case "skills": {
-        resumeData.skills.forEach(({ name, progress }, index) => {
+        resumeData.skills.forEach(({ name }, index) => {
           if (!name.trim())
             errors.push(`Skill name is required in skill ${index + 1}`);
-          if (progress < 1 || progress > 100)
-            errors.push(
-              `Skill progress must be between 1 and 100 in skill ${index + 1}`
-            );
+          //   if (progress < 1 || progress > 100)
+          //     errors.push(
+          //       `Skill progress must be between 1 and 100 in skill ${index + 1}`
+          //     );
         });
         break;
       }
